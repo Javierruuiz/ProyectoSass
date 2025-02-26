@@ -1,0 +1,17 @@
+/// .btn
+/// 
+/// Aplica el estilo de botón utilizando el mixin `button-style`, pasando como 
+/// argumentos el color principal ($primary-color) y el color de texto blanco (#fff). 
+/// Este estilo crea un botón con el color principal como fondo y texto blanco.
+.btn {
+  @include button-style($primary-color, #fff);
+}
+
+/// .btn-secondary
+/// 
+/// Aplica el estilo de botón utilizando el mixin `button-style`, pasando como 
+/// argumentos el color secundario ($secondary-color) y el color de texto blanco (#fff). 
+/// Este estilo crea un botón con el color secundario como fondo y texto blanco.
+.btn-secondary {
+  @include button-style($secondary-color, #fff);
+}

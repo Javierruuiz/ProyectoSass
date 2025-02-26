@@ -1,0 +1,38 @@
+/// .container
+/// 
+/// Establece un contenedor de ancho máximo de 1200px, centrado en la página, 
+/// con un pequeño relleno interno de 1rem. 
+/// 
+/// Utilizado comúnmente para envolver el contenido y darle un ancho adecuado.
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/// .section
+/// 
+/// Aplica un relleno vertical de 4rem en la parte superior e inferior del elemento. 
+/// También extiende el mixin o placeholder %text-center, que se asume que alinea 
+/// el contenido de forma central.
+/// 
+/// Este estilo se utiliza para crear secciones destacadas con un espaciado adecuado 
+/// y contenido centrado.
+.section {
+  padding: 4rem 0;
+  @extend %text-center;
+}
+
+/// img
+/// 
+/// Establece que las imágenes no superen el ancho de su contenedor, 
+/// manteniendo la proporción de la imagen con el ajuste automático de la altura. 
+/// También se asegura de que las imágenes se muestren como bloques, 
+/// eliminando cualquier espacio por debajo de la imagen, 
+/// y aplica un borde redondeado de 8px.
+img {
+  max-width: 100%; 
+  height: auto;  
+  display: block;
+  border-radius: 8px;  
+}

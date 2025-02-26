@@ -1,0 +1,23 @@
+// Importamos variables, mixins y funciones
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+@import "utils/placeholders";
+
+// Importamos estilos base
+@import "base/reset";
+@import "base/typography";
+@import "base/globals";
+
+// Importamos componentes
+@import "components/buttons";
+@import "components/cards";
+@import "components/navbar";
+@import "components/footer";
+@import "components/destacadas";
+@import "components/comentarios";
+
+// Importamos layouts
+@import "layout/header";
+@import "layout/grid";
+@import "layout/sections";

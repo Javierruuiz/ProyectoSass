@@ -1,0 +1,58 @@
+/// .categorias
+/// 
+/// Estilos para la sección de categorías. Se extiende de `.section` para aplicar 
+/// la misma estructura básica.
+/// 
+/// @property {String} @extend .section Extiende los estilos de `.section` para mantener la estructura base de la sección.
+.categorias {
+  @extend .section;
+
+  /// .category
+  /// 
+  /// Estilos para cada categoría individual. Se extiende de `%box-shadow` para agregar 
+  /// sombra predeterminada, y se aplica un relleno de 1rem y alineación centrada del texto.
+  /// 
+  /// @property {String} @extend %box-shadow Extiende los estilos de `%box-shadow` para aplicar sombra.
+  /// @property {String} padding 1rem Aplica un relleno de 1rem dentro de cada categoría.
+  /// @property {String} text-align center Alinea el texto al centro.
+  .category {
+    @extend %box-shadow;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  /// .category img
+  /// 
+  /// Estilos para las imágenes dentro de las categorías. Se ajustan a un tamaño fijo de 150px de altura.
+  /// 
+  /// @property {String} width 100% La imagen ocupa todo el ancho disponible.
+  /// @property {String} height 150px Establece una altura fija de 150px para las imágenes.
+  /// @property {String} object-fit cover Hace que la imagen cubra el área disponible sin distorsionarse.
+  /// @property {String} border-radius 8px Aplica bordes redondeados de 8px a las imágenes.
+  .category img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  /// .detalle-casa img
+  /// 
+  /// Estilos para la imagen de detalle de la casa. Se ajusta al 80% del contenedor, con un máximo de 600px de ancho.
+  /// También se aplica un margen y bordes redondeados de 10px, junto con una sombra ligera.
+  /// 
+  /// @property {String} width 80% La imagen ocupa el 80% del ancho del contenedor.
+  /// @property {String} max-width 600px Establece un ancho máximo de 600px para la imagen.
+  /// @property {String} height auto La altura de la imagen se ajusta automáticamente para mantener las proporciones.
+  /// @property {String} margin 20px auto Aplica un margen de 20px en la parte superior e inferior y centra la imagen.
+  /// @property {String} border-radius 10px Aplica bordes redondeados de 10px a la imagen.
+  /// @property {String} box-shadow 0 4px 8px rgba(0, 0, 0, 0.2) Aplica una sombra ligera alrededor de la imagen
+  .detalle-casa img {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}

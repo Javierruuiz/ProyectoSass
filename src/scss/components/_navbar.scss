@@ -1,0 +1,143 @@
+/// navbar
+/// 
+/// Establece los estilos para la barra de navegación principal.
+/// - Fondo: color primario ($primary-color).
+/// - Relleno: 1.5rem en la parte superior e inferior.
+/// - Media Queries: ajuste del diseño para diferentes tamaños de pantalla (tablet y móvil).
+/// - Transiciones suaves para los enlaces de navegación.
+///
+.navbar {
+    background: $primary-color;
+    padding: 1.5rem 2rem;
+  
+    /// nav
+    /// 
+    /// Configura la disposición de los elementos dentro del nav utilizando Flexbox.
+    /// - Alineación de los elementos al centro.
+    /// - Distribución equitativa entre los elementos.
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  
+    /// .logo
+    /// 
+    /// Estilo para el logo en la barra de navegación.
+    /// - Color blanco (#f8f8f8).
+    /// - Tamaño de fuente grande (lg).
+    /// - Peso de fuente 600 y texto en mayúsculas.
+    /// - Espaciado entre letras de 2px.
+    .logo {
+      color: #f8f8f8;
+      font-size: font-size(lg);
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+  
+    /// .nav-links
+    /// 
+    /// Estilos para la lista de enlaces de navegación.
+    /// - Elimina las viñetas y organiza los enlaces en una fila.
+    /// - Se aplica un espacio de 2rem entre los elementos.
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+  
+      /// li
+      /// 
+      /// Estilo para cada elemento de la lista de navegación.
+      li {
+        /// a
+        /// 
+        /// Estilos para los enlaces de navegación.
+        /// - Color gris claro (#e0e0e0).
+        /// - Peso de fuente 500, texto en minúsculas.
+        /// - Borde redondeado y transición suave.
+        a {
+          color: #e0e0e0;
+          font-weight: 500;
+          text-transform: capitalize;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+  
+          /// &:hover
+          /// 
+          /// Efecto al pasar el ratón sobre los enlaces.
+          /// - El fondo cambia a un gris semitransparente.
+          /// - El color del texto se vuelve blanco.
+          &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+          }
+        }
+      }
+    }
+  
+    /// Media Queries
+    /// 
+    /// Ajustes del diseño de la barra de navegación en dispositivos con diferentes tamaños de pantalla.
+  
+    /// @include media(tablet)
+    /// 
+    /// En pantallas de tablet o superiores:
+    /// - El relleno se reduce.
+    /// - Los elementos de la barra de navegación se distribuyen con más espacio entre ellos.
+    @include media(tablet) {
+      padding: 1rem 1.5rem;
+  
+      nav {
+        justify-content: space-between;
+      }
+  
+      .nav-links {
+        gap: 1.5rem;
+  
+        /// li a
+        /// 
+        /// El tamaño de la fuente de los enlaces se reduce para ajustarse a la pantalla.
+        li a {
+          font-size: font-size(medium);
+        }
+      }
+    }
+  
+    /// @include media(mobile)
+    /// 
+    /// En pantallas móviles:
+    /// - El relleno se reduce aún más.
+    /// - Los elementos de la barra de navegación se apilan en una columna.
+    /// - Los enlaces ocupan el 100% del ancho disponible con texto centrado.
+    @include media(mobile) {
+      padding: 1rem;
+  
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+  
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+  
+        /// li a
+        /// 
+        /// El tamaño de la fuente se reduce aún más, y los enlaces se muestran en bloque,
+        /// ocupando el 100% del ancho disponible con texto centrado.
+        li a {
+          font-size: font-size(small);
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding: 0.75rem 1rem;
+        }
+      }
+    }
+  }
+  

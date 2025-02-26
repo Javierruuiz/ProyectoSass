@@ -1,0 +1,45 @@
+/// Colores principales
+/// 
+/// - $primary-color: Color principal, utilizado para elementos destacados o botones.
+/// - $secondary-color: Color secundario, usado para resaltar o acciones secundarias.
+/// - $background-color: Color de fondo general de la página o elementos.
+/// - $text-color: Color del texto, generalmente para texto en el contenido.
+$primary-color: #2c3e50; 
+$secondary-color: #e74c3c; 
+$background-color: #ecf0f1;
+$text-color: #2c3e50; 
+
+/// Fuentes
+/// 
+/// - $font-primary: Fuente principal utilizada para los textos principales.
+/// - $font-secondary: Fuente secundaria utilizada para textos decorativos o secundarios.
+$font-primary: "Poppins", sans-serif;
+$font-secondary: "Merriweather", serif;
+
+/// Tamaños de fuente
+/// 
+/// - $font-sizes: Mapa que contiene los tamaños de fuente.
+///    - small: 0.875rem; Tamaño de fuente pequeño.
+///    - base: 1rem; Tamaño de fuente base (por defecto).
+///    - large: 1.25rem; Tamaño de fuente grande.
+///    - xl: 1.5rem; Tamaño de fuente extra grande.
+///    - xxl: 2rem; Tamaño de fuente muy grande.
+$font-sizes: (
+  small: 0.875rem,
+  base: 1rem,
+  large: 1.25rem,
+  xl: 1.5rem,
+  xxl: 2rem
+);
+
+/// Breakpoints
+/// 
+/// - $breakpoints: Mapa que contiene los valores de los puntos de ruptura (breakpoints) para la respuesta.
+///    - mobile: 480px; Punto de ruptura para dispositivos móviles.
+///    - tablet: 768px; Punto de ruptura para tablets.
+///    - desktop: 1024px; Punto de ruptura para escritorios.
+$breakpoints: (
+  mobile: 480px,
+  tablet: 768px,
+  desktop: 1024px
+);

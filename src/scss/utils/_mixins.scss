@@ -1,0 +1,62 @@
+/// @mixin flex-center
+/// 
+/// Mixin para centrar un elemento usando flexbox tanto horizontal como verticalmente.
+/// 
+/// @example
+/// .container {
+///   @include flex-center;
+/// }
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/// @mixin button-style
+/// 
+/// Mixin para aplicar estilos a los botones con colores personalizados.
+/// 
+/// @param {Color} $bg-color El color de fondo del botón.
+/// @param {Color} $text-color El color del texto del botón.
+/// 
+/// @example
+/// .btn {
+///   @include button-style($primary-color, #fff);
+/// }
+@mixin button-style($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+/// @mixin media
+/// 
+/// Mixin para aplicar una media query según un punto de ruptura específico.
+/// 
+/// @param {String} $breakpoint El nombre del punto de ruptura (mobile, tablet, desktop).
+/// 
+/// @example
+/// @include media(mobile) {
+///   .element {
+///     font-size: 14px;
+///   }
+/// }
+@mixin media($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 576px) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 768px) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (max-width: 1024px) { @content; }
+  } @else {
+    @media (max-width: $breakpoint) { @content; }
+  }
+}

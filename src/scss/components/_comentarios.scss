@@ -1,0 +1,90 @@
+/// #resenas
+/// 
+/// Establece el estilo para la sección de reseñas. El texto se centra 
+/// y se aplica un relleno de 4rem en la parte superior e inferior y 2rem 
+/// en los lados. Se utiliza un color de fondo claro (#f8f9fa) para la sección.
+#resenas {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+  
+    /// h2
+    /// 
+    /// Establece el tamaño de la fuente para el encabezado h2 utilizando la 
+    /// función font-size(xl) y se le aplica un margen inferior de 2rem.
+    h2 {
+      font-size: font-size(xl);
+      margin-bottom: 2rem;
+    }
+  
+    /// .testimonials
+    /// 
+    /// Utiliza un diseño de flexbox para mostrar las reseñas, con las 
+    /// tarjetas de testimonio que se ajustan al espacio disponible. 
+    /// Los elementos se envuelven en una nueva línea si es necesario, 
+    /// con un espacio de 1.5rem entre ellos. Además, se establece un 
+    /// ancho máximo de 900px y se centra en la página.
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: auto;
+    }
+  
+    /// .testimonial
+    /// 
+    /// Define el estilo para cada tarjeta de testimonio, con un fondo blanco, 
+    /// bordes redondeados de 8px, y un relleno de 1.5rem. Se aplica una sombra 
+    /// suave de caja y un alineado de texto a la izquierda.
+    .testimonial {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      max-width: 400px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+  
+      /// p
+      /// 
+      /// Establece el estilo para el contenido del testimonio, utilizando 
+      /// una fuente de tamaño medio con estilo en cursiva y un color de texto 
+      /// oscuro (#333).
+      p {
+        font-size: font-size(medium);
+        font-style: italic;
+        color: #333;
+      }
+  
+      /// cite
+      /// 
+      /// Define el estilo para el autor del testimonio, mostrándolo en 
+      /// negrita y con un color personalizado que proviene de la variable 
+      /// $primary-color. Se aplica un margen superior de 1rem para separarlo 
+      /// del contenido del testimonio.
+      cite {
+        display: block;
+        margin-top: 1rem;
+        font-weight: bold;
+        color: $primary-color;
+      }
+    }
+  
+    /// Media queries
+    /// 
+    /// Se incluye un media query para dispositivos móviles, donde los 
+    /// testimonios se muestran en una columna, con los elementos centrados 
+    /// y un ancho máximo del 90% para cada tarjeta de testimonio.
+    @include media(mobile) {
+      .testimonials {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .testimonial {
+        max-width: 90%;
+      }
+    }
+  }
+  

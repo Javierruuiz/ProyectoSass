@@ -1,0 +1,23 @@
+/// %box-shadow
+/// 
+/// Placeholder para aplicar una sombra sutil en un elemento.
+/// 
+/// @example
+/// .card {
+///   @extend %box-shadow;
+/// }
+%box-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/// %text-center
+/// 
+/// Placeholder para centrar el texto de un elemento.
+/// 
+/// @example
+/// .title {
+///   @extend %text-center;
+/// }
+%text-center {
+  text-align: center;
+}

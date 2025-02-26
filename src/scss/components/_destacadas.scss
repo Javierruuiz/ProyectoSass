@@ -1,0 +1,166 @@
+/// #destacadas
+/// 
+/// Establece el estilo para la sección de propiedades destacadas. El 
+/// texto se centra y se aplica un relleno de 4rem en la parte superior 
+/// e inferior y 2rem en los lados. El fondo es de color #f8f9fa.
+#destacadas {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+  
+    /// h2
+    /// 
+    /// Establece el tamaño de la fuente para el encabezado h2 utilizando la 
+    /// función font-size(xl) y un margen inferior de 2rem. Además, se aplica 
+    /// una animación para que aparezca deslizándose hacia abajo con un 
+    /// desvanecimiento.
+    h2 {
+      font-size: font-size(xl);
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeIn 1s ease-out forwards;
+    }
+  
+    /// .grid
+    /// 
+    /// Utiliza un diseño de cuadrícula (grid) que se adapta al tamaño de la 
+    /// pantalla, con un mínimo de 300px por columna. Los elementos se distribuyen 
+    /// con un espacio de 2rem entre ellos, centrados y alineados correctamente.
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    /// .property
+    /// 
+    /// Define el estilo de cada propiedad destacada, con bordes redondeados 
+    /// de 15px, un efecto de escala al pasar el ratón y una sombra en el cuadro. 
+    /// Se aplica una animación para que cada propiedad aparezca con un efecto 
+    /// de desvanecimiento y escala.
+    .property {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeInScale 0.8s ease-out forwards;
+  
+      /// img
+      /// 
+      /// Establece el tamaño de la imagen para que se ajuste al ancho del contenedor 
+      /// y se mantenga la proporción de la imagen. Se aplica un filtro de brillo 
+      /// reducido y una transición para cambiar el brillo y la escala cuando se 
+      /// pasa el ratón por encima.
+      img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        filter: brightness(0.7);
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+  
+      /// .info
+      /// 
+      /// Define el estilo de la información de la propiedad, posicionada 
+      /// en la parte inferior con un fondo oscuro translúcido y un filtro de desenfoque. 
+      /// La información se muestra con un relleno de 1.5rem y texto alineado a la izquierda.
+      .info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 1.5rem;
+        text-align: left;
+        backdrop-filter: blur(5px);
+        transition: background 0.3s ease;
+      }
+  
+      /// h3
+      /// 
+      /// Establece el tamaño de la fuente para el título de la propiedad 
+      /// utilizando font-size(large) y aplica un margen inferior de 0.5rem.
+      h3 {
+        font-size: font-size(large);
+        margin-bottom: 0.5rem;
+      }
+  
+      /// p
+      /// 
+      /// Define el tamaño de la fuente para la descripción de la propiedad, 
+      /// con una opacidad de 0.8 para un efecto más suave.
+      p {
+        font-size: font-size(medium);
+        opacity: 0.8;
+      }
+  
+      /// &:hover
+      /// 
+      /// Define los efectos al pasar el ratón sobre la propiedad, que incluyen 
+      /// un desplazamiento hacia arriba, un aumento de la sombra y un cambio 
+      /// en el brillo y escala de la imagen. También cambia el fondo de la 
+      /// información a un color más oscuro.
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+  
+        img {
+          filter: brightness(1);
+          transform: scale(1.05);
+        }
+  
+        .info {
+          background: rgba(0, 0, 0, 0.8);
+        }
+      }
+    }
+  
+    /// Media queries
+    /// 
+    /// Se incluye un media query para dispositivos móviles, donde las 
+    /// propiedades se muestran en una sola columna y se ajusta el relleno de la 
+    /// información para que ocupe un espacio más pequeño.
+    @include media(mobile) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+  
+      .property .info {
+        padding: 1rem;
+      }
+    }
+  }
+  
+  /// Animaciones
+  /// 
+  /// Define dos animaciones clave para los efectos de desvanecimiento y escala 
+  /// de los elementos.
+  
+  /// fadeIn
+  /// 
+  /// Anima la opacidad y el desplazamiento vertical de los elementos, 
+  /// logrando un efecto de desvanecimiento hacia abajo.
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /// fadeInScale
+  /// 
+  /// Anima la opacidad y la escala de los elementos, creando un efecto de 
+  /// desvanecimiento con aumento de tamaño.
+  @keyframes fadeInScale {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

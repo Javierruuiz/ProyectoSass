@@ -1,0 +1,16 @@
+/// .grid
+/// 
+/// Configura una cuadrícula (grid) flexible que ajusta el número de columnas según 
+/// el tamaño de la pantalla y el contenido. Cada columna tiene un ancho mínimo de 250px 
+/// y un ancho máximo de 1 fracción (1fr), permitiendo que se adapten de manera fluida 
+/// al tamaño del contenedor.
+/// 
+/// @property {String} display grid Establece la cuadrícula como un contenedor de tipo grid.
+/// @property {String} grid-template-columns repeat(auto-fit, minmax(250px, 1fr)) Define el número de columnas, ajustándose a la cantidad de contenido.
+/// @property {String} gap 1rem Establece el espacio entre los elementos dentro de la cuadrícula.
+.grid {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  
+  gap: 1rem;  
+}
+

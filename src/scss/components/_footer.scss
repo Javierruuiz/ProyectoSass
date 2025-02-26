@@ -1,0 +1,148 @@
+/// footer
+/// 
+/// Establece los estilos generales para el pie de página. 
+/// - Fondo: color primario ($primary-color).
+/// - Color de texto: blanco (#fff).
+/// - Relleno: 2rem en la parte superior e inferior.
+/// - Tamaño de la fuente: 0.9rem.
+/// 
+/// Media Queries:
+/// - En dispositivos móviles: tamaño de fuente ajustado a 0.8rem, relleno ajustado a 1.5rem.
+/// - En tabletas: los elementos se apilan en una sola columna.
+footer {
+    background: $primary-color;
+    color: #fff;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+  
+    /// .footer-container
+    /// 
+    /// Contenedor principal del pie de página. Usa Flexbox para distribuir 
+    /// los elementos de manera equitativa, con un ancho máximo de 1200px y 
+    /// relleno ajustado en pantallas pequeñas.
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 2rem;
+  
+      /// .footer-section
+      /// 
+      /// Define las secciones dentro del pie de página. Cada sección tiene un 1 de flexibilidad 
+      /// y un ancho mínimo de 250px. Además, se centra el texto y se ajustan los márgenes.
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 1.5rem;
+        text-align: center;
+  
+        /// h3
+        /// 
+        /// Título de cada sección en el pie de página.
+        /// - Tamaño de fuente: 1.2rem.
+        /// - Márgenes: 0.8rem en la parte inferior.
+        /// - Texto en mayúsculas con espaciado entre letras de 1px.
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+  
+        /// p
+        /// 
+        /// Define el estilo para los párrafos dentro de las secciones.
+        /// - Margen de 0.5rem arriba y abajo.
+        /// - Opacidad de 0.8 para un tono más suave.
+        p {
+          margin: 0.5rem 0;
+          opacity: 0.8;
+        }
+  
+        /// ul
+        /// 
+        /// Establece los estilos para las listas dentro de las secciones, eliminando 
+        /// los estilos predeterminados (sin viñetas).
+        ul {
+          list-style: none;
+          padding: 0;
+  
+          /// li
+          /// 
+          /// Define los márgenes entre los elementos de la lista.
+          li {
+            margin: 0.5rem 0;
+  
+            /// a
+            /// 
+            /// Configura los estilos para los enlaces dentro de las listas.
+            /// - Color blanco y sin subrayado.
+            /// - Transición de color al pasar el ratón.
+            a {
+              color: #fff;
+              text-decoration: none;
+              transition: color 0.3s ease-in-out;
+  
+              /// &:hover
+              /// 
+              /// Al pasar el ratón sobre los enlaces, cambia el color al color secundario 
+              /// con una transición suave.
+              &:hover {
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    /// .footer-bottom
+    /// 
+    /// Estilo para la sección inferior del pie de página.
+    /// - El texto se centra.
+    /// - Fondo más oscuro (10% más oscuro que el color primario).
+    .footer-bottom {
+      text-align: center;
+      padding: 1rem 0;
+      background: darken($primary-color, 10%);
+    }
+  
+    /// Media Queries
+    /// 
+    /// Se incluyen media queries para ajustar el diseño del pie de página en 
+    /// diferentes tamaños de pantalla, como tabletas y dispositivos móviles.
+  
+    /// @include media(tablet)
+    /// 
+    /// En pantallas de tamaño tablet o superior, los elementos de la sección 
+    /// del pie de página se apilan en una sola columna y se centra el texto.
+    @include media(tablet) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  
+    /// @include media(mobile)
+    /// 
+    /// En pantallas móviles, el tamaño de la fuente se reduce a 0.8rem y el 
+    /// relleno se ajusta a 1.5rem. El contenedor de las secciones del pie de 
+    /// página también tiene un relleno de 1rem y las secciones se ajustan para 
+    /// ocupar el 100% del ancho disponible.
+    @include media(mobile) {
+      font-size: 0.8rem;
+      padding: 1.5rem 0;
+  
+      .footer-container {
+        padding: 0 1rem;
+      }
+  
+      .footer-section {
+        min-width: 100%;
+      }
+    }
+  }
+  

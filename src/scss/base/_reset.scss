@@ -1,0 +1,24 @@
+/// * 
+/// 
+/// Establece un estilo global para todos los elementos del documento. 
+/// Elimina el margen y el relleno por defecto de todos los elementos, 
+/// y asegura que el box-sizing se configure como border-box, 
+/// lo que significa que el ancho y el alto de los elementos incluirán el relleno y los bordes.
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/// body
+/// 
+/// Establece la fuente principal del cuerpo del documento mediante la variable 
+/// $font-primary, el color del texto mediante la variable $text-color, 
+/// y el color de fondo utilizando la variable $background-color. 
+/// También se establece una altura de línea de 1.6 para mejorar la legibilidad.
+body {
+  font-family: $font-primary;
+  color: $text-color;
+  background-color: $background-color;
+  line-height: 1.6;
+}

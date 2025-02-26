@@ -1,0 +1,38 @@
+/// h1, h2, h3
+/// 
+/// Establece que todos los encabezados de nivel 1, 2 y 3 (h1, h2, h3) 
+/// utilicen la fuente secundaria definida por la variable $font-secondary. 
+/// También se les aplica un margen inferior de 1rem para separar adecuadamente 
+/// los encabezados del contenido que sigue.
+h1, h2, h3 {
+  font-family: $font-secondary;
+  margin-bottom: 1rem;
+}
+
+/// h1
+/// 
+/// Establece el tamaño de fuente para el encabezado h1 utilizando una función 
+/// font-size(xxl), que probablemente esté definida para proporcionar un tamaño 
+/// de fuente grande y destacado.
+h1 {
+  font-size: font-size(xxl);
+}
+
+/// h2
+/// 
+/// Establece el tamaño de fuente para el encabezado h2 utilizando una función 
+/// font-size(xl), que ajusta el tamaño de la fuente a un tamaño menor que el de h1.
+h2 {
+  font-size: font-size(xl);
+}
+
+/// p
+/// 
+/// Establece el tamaño de fuente para los párrafos con la función 
+/// font-size(base), que ajusta el tamaño de la fuente al valor base para el 
+/// cuerpo de texto. Además, se configura una altura de línea de 1.6 para 
+/// asegurar una lectura cómoda y clara.
+p {
+  font-size: font-size(base);
+  line-height: 1.6;
+}

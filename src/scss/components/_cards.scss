@@ -1,0 +1,134 @@
+/// #categorias
+/// 
+/// Establece un estilo para la sección de categorías. El texto se centra 
+/// y se aplica un relleno de 4rem en la parte superior e inferior y 2rem 
+/// en los lados. Además, la cabecera (h2) tiene una animación de entrada 
+/// con un efecto de desvanecimiento y movimiento hacia abajo.
+#categorias {
+  text-align: center;
+  padding: 4rem 2rem;
+
+  /// h2
+  /// 
+  /// Establece el tamaño de la fuente para el encabezado h2 utilizando la 
+  /// función font-size(xl). Se le aplica un margen inferior de 2rem, 
+  /// y la animación `fadeIn` para hacer que el texto aparezca con un 
+  /// efecto de desplazamiento hacia arriba y desvanecimiento.
+  h2 {
+    font-size: font-size(xl);
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  /// .grid
+  /// 
+  /// Define una cuadrícula con columnas automáticas que se ajustan al 
+  /// tamaño disponible, con un mínimo de 250px por columna. También 
+  /// establece un espacio de 2rem entre los elementos de la cuadrícula 
+  /// y los alinea en el centro.
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /// .category
+  /// 
+  /// Establece el estilo para cada categoría, con un fondo blanco, bordes 
+  /// redondeados y sombra mediante el placeholder %box-shadow. Además, 
+  /// la categoría tiene una animación de entrada con un efecto de 
+  /// escala y desvanecimiento. Se aplica una transición de 0.3s en 
+  /// la propiedad de transformación y la sombra.
+  .category {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    @extend %box-shadow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 0.7s ease-out forwards;
+    
+    /// img
+    /// 
+    /// Define el estilo para las imágenes dentro de cada categoría, 
+    /// asegurándose de que ocupen el 100% del ancho y tengan una altura 
+    /// fija de 180px, con el ajuste de la imagen para cubrir el área. 
+    /// Se les aplica una transición en la transformación.
+    img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    /// h3
+    /// 
+    /// Establece el estilo para el encabezado h3 dentro de cada categoría, 
+    /// con un tamaño de fuente ajustado mediante font-size(large) y un 
+    /// relleno interno de 1rem. También se aplica una transición en el color.
+    h3 {
+      font-size: font-size(large);
+      padding: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    /// &:hover
+    /// 
+    /// Establece el efecto cuando el usuario pasa el ratón sobre la 
+    /// categoría. Se aumenta la escala de la categoría, y se cambia 
+    /// la sombra y el color del encabezado h3. También se aumenta 
+    /// la escala de la imagen.
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+      img {
+        transform: scale(1.1);
+      }
+
+      h3 {
+        color: $primary-color;
+      }
+    }
+  }
+
+  /// Media queries
+  /// 
+  /// Se incluye un media query para dispositivos móviles, donde la cuadrícula 
+  /// se ajusta para mostrar solo una columna de categorías.
+  @include media(mobile) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/// @keyframes fadeIn
+/// 
+/// Define una animación para el desvanecimiento y movimiento hacia abajo 
+/// de un elemento, donde la opacidad pasa de 0 a 1 y el elemento se 
+/// desplaza desde una posición superior (-20px) hasta su posición original.
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/// @keyframes fadeInScale
+/// 
+/// Define una animación de escala para los elementos, donde la opacidad 
+/// pasa de 0 a 1 y el elemento se escala de 0.8 a 1.
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

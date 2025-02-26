@@ -1,0 +1,19 @@
+/// @function font-size
+/// 
+/// Función para obtener el tamaño de fuente desde un mapa de tamaños.
+/// 
+/// @param {String} $size El tamaño de fuente solicitado (ejemplo: 'small', 'medium', 'large').
+/// @return {String} El valor del tamaño de fuente correspondiente.
+@function font-size($size) {
+  @return map-get($font-sizes, $size);
+}
+
+/// @function breakpoint
+/// 
+/// Función para obtener el valor de un punto de ruptura (breakpoint) desde un mapa de breakpoints.
+/// 
+/// @param {String} $size El tamaño de breakpoint solicitado (ejemplo: 'mobile', 'tablet', 'desktop').
+/// @return {String} El valor del breakpoint correspondiente.
+@function breakpoint($size) {
+  @return map-get($breakpoints, $size);
+}
